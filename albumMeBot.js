@@ -26,7 +26,7 @@ bot.use(LocalSession.middleware())
 //  Bot logic
 //
 
-bot.hears('/start', (ctx) => {
+bot.start((ctx) => {
   const message = ctx.i18n.t('greeting', {
     username: ctx.from.username
   })
@@ -41,6 +41,17 @@ bot.hears('/start', (ctx) => {
   })
 })
 
+bot.help(ctx => {
+  ctx.reply(ctx.i18n.t('help'))
+})
+
+bot.settings(ctx => {
+  ctx.reply(ctx.i18n.t('settings'))
+})
+
+bot.command('source', ctx => {
+  ctx.reply(ctx.i18n.t('source'))
+})
 
 // Add album entries
 bot.on('photo', ({ message, session, reply, i18n }) => {

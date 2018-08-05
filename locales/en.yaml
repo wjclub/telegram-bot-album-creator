@@ -7,4 +7,4 @@ source: "https://github.com/wjclub/telegram-album-creator-bot"
 keyboard_done: "Create Album"
 keyboard_clear: "Reset Album"
 not_enough_media_items: "Sorry, but you must send me more than two Media elements (Images or Videos) to create an Album."
-queue_cleared: 
+queue_cleared: "I forgot about all the photos and videos you sent me. You got a new chance."
