@@ -1,0 +1,17 @@
+{
+  "name": "albummebot",
+  "version": "1.0.0",
+  "description": "Jam multiple pictures together so they form albums",
+  "main": "albumMeBot.js",
+  "dependencies": {
+    "telegraf": "^3.22.1",
+    "telegraf-i18n": "^6.1.1",
+    "telegraf-session-local": "0.0.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,10 @@
+greeting: "Hello ${username}! Have you ever found some wonderful images on Telegram, which you would like to group them together, but don't want to down- and upload them all again? Let me do that for your real quick.\n\nSend me any photos or videos and I will create Albums out of them!\n\n"
+help: 'Just forward or send me multiple photos and/or videos. Once you are done, press the "Create Album" Button and get all your previously sent files jammed together as albums. If you screwed up, click "Clear Album" to start again.\n\nThis piece of shit is made by @wjclub.'
+settings: 'There are no settings to be made here'
+source: "https://github.com/wjclub/telegram-album-creator-bot"
+
+
+keyboard_done: "Create Album"
+keyboard_clear: "Reset Album"
+not_enough_media_items: "Sorry, but you must send me more than two Media elements (Images or Videos) to create an Album."
+queue_cleared: 
