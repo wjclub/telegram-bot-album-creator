@@ -80,7 +80,7 @@ bot.on('video', ({ message, session, reply, i18n }) => {
 })
 
 // Finish album creation
-bot.hears(TelegrafI18n.match('keyboard_done'), ({ i18n, reply, replyWithMediaGroup, session}) => {
+bot.hears(TelegrafI18n.match('keyboard_done'), async ({ i18n, reply, replyWithMediaGroup, session}) => {
 
   // Return if only one media item is present
   if (!session.mediaQueue || session.mediaQueue.length < 1) {
@@ -98,12 +98,20 @@ bot.hears(TelegrafI18n.match('keyboard_done'), ({ i18n, reply, replyWithMediaGro
   let ItemsPerPage = Math.floor(n / pages)
   let k = (n % pages) /* How many times we need to sneek an extra mediaItem in */
 
-  for (let i = 0; i < pages; i++) {
-    // Move media items from queue to to-be-sent queue
-    const mediaToSend = queue.splice(0, ItemsPerPage + ((i < k)? 1 : 0))
+  try {
+
+    for (let i = 0; i < pages; i++) {
+      // Move media items from queue to to-be-sent queue
+      const mediaToSend = queue.splice(0, ItemsPerPage + ((i < k)? 1 : 0))
+      
+      // Send media group
+      await replyWithMediaGroup(mediaToSend)
+    }
     
-    // Send media group
-    replyWithMediaGroup(mediaToSend)
+  } catch (error) {
+    reply('Something went wrong while sending the album. Please try again in a minute or contact us. (Contact in this bot\'s profile)').catch(err => {
+      console.error('Could not send album AND error message to user.')
+    })
   }
 
 })
