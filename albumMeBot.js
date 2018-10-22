@@ -66,7 +66,7 @@ bot.on('photo', ({ message, session, reply, i18n }) => {
 
 })
 
-// TODO: Add video
+// Add video entries
 bot.on('video', ({ message, session, reply, i18n }) => {
 
   // Ensure a mediaQueue exists in the user's session
@@ -78,6 +78,8 @@ bot.on('video', ({ message, session, reply, i18n }) => {
   session.mediaQueue.push({ type: 'video', media: vidFileId })
 
 })
+
+
 
 // Finish album creation
 bot.hears(TelegrafI18n.match('keyboard_done'), async ({ i18n, reply, replyWithMediaGroup, session}) => {
