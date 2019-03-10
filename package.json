@@ -6,7 +6,7 @@
   "dependencies": {
     "telegraf": "^3.22.1",
     "telegraf-i18n": "^6.1.1",
-    "telegraf-session-local": "0.0.5"
+    "telegraf-session-local": "0.0.6"
   },
   "devDependencies": {},
   "scripts": {
