@@ -1,4 +1,4 @@
-const Telegraf = require('telegraf')
+const { Telegraf } = require("telegraf");
 const TelegrafI18n = require('telegraf-i18n')
 const TelegrafLocalSession = require('telegraf-session-local')
 const path = require('path')
@@ -124,5 +124,10 @@ bot.hears(TelegrafI18n.match('keyboard_clear'), (ctx) => {
 })
 
 
-// Start bot
-bot.startPolling()
+// Start the bot
+console.log(
+  `Starting longPolling (chat_id of bot: ${
+    process.env.BOT_TOKEN.split(":")[0]
+  })...`
+);
+bot.launch();
